@@ -1,0 +1,43 @@
+
+local OrionLib = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Orion/main/source'))()
+local player = game.Players.LocalPlayer
+local Window = OrionLib:MakeWindow({Name = "Z HUB (PAID) ", HidePremium = false, SaveConfig = true, ConfigFolder = "ZHUB"})
+
+OrionLib:MakeNotification({
+    Name = "ZHUB Notificition",
+    Content = "You Are Logged In As"..Player.Name..".",
+    Image = "rbxassetid://4483345998",
+    Time = 5
+})
+
+
+
+local Tab = Window:MakeTab({
+    Name = "Key System",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+
+_G.Key = "ZHUB-Paid-276494J"
+_G.KeyInput = "string"
+
+function MakeScriptHub()
+      loadstring(game:HttpGet('https://raw.githubusercontent.com/ZoronISaW/zHub/main/New'))()
+end
+
+Tab:AddTextbox({
+    Name = "Key Here",
+    Default = "Input Key",
+    TextDisappear = true,
+    Callback = function(Value)
+        _G.KeyInput = Value  
+})
+
+Tab:AddButton({
+    Name = "Check Key",
+    Callback = function()
+              if _G.KeyInput == _G.Key then
+                      MakeScriptHub()
+            end
+      end    
+}) 
